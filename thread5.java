@@ -1,8 +1,8 @@
-public class thread5 extends Thread {
+public class Thread5 extends Thread {
     private int sum;
     private String company;
 
-    public thread5(int sum, String company) {
+    public Thread5(int sum, String company) {
         this.sum = sum;
         this.company = company;
 

@@ -1,15 +1,18 @@
-public class thread1 extends Thread {
+public class Thread1 extends Thread {
 
     private String cardNum;
     private boolean isValid;
 
-    public thread1(String cardNum) {
+    public Thread1(String cardNum) {
         this.cardNum = cardNum;
     }
 
     public boolean getIsValid() {
         return isValid;
     }
+
+
+    // public static void main(String[] args) { run(); }
 
     @Override
     public void run() {
@@ -26,5 +29,4 @@ public class thread1 extends Thread {
         }
         return isValid;
     }
-
 }
