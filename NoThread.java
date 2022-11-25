@@ -1,39 +1,30 @@
-//No Threads
-import java.util.Scanner;
 public class NoThread {
     public static void main(String[] args) {
-        // Ask user for input
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter a card number between 13 and 19 digits: ");
-        String cardNum = input.next();
-
         long start = System.currentTimeMillis();
 
-        String company = "";
-        if (step1(cardNum) == true) {
-            company = step2(cardNum);
-        } else {
-            while (step1(cardNum) == false) {
-                System.out.println("Enter a card number between 13 and 19 digits: ");
-                cardNum = input.next();
-                step1(cardNum);
-            }
-            company = step2(cardNum);
-        }
-        input.close();
-        System.out.println("Company: " + company);
-        int sum;
-        if (company != "") {
-            // Step 5: Sum results of step 3 and 4
-            sum = step3(cardNum) + step4(cardNum);
+        for (int i = 0; i < args.length; i++) {
+            String cardNum = args[i];
+            String company = "";
 
-            validationStep(sum, company);
+            if (step1(cardNum) == true) {
+                company = step2(cardNum);
+
+                System.out.println("Company: " + company);
+                int sum;
+                if (company != "") {
+                    // Step 5: Sum results of step 3 and 4
+                    sum = step3(cardNum) + step4(cardNum);
+                    validationStep(sum, company);
+                    System.out.println("----------------------------------------------------------\n\n");
+                }
+
+            } else {
+                System.out.println("Card Number is invalid");
+
+            }
         }
 
         long end = System.currentTimeMillis();
-
         System.out.println("This program executed for " + (end - start) + "ms");
     }
 
@@ -62,15 +53,15 @@ public class NoThread {
             case 3:
                 company = "AMEX";
 
-            // Discover
+                // Discover
             case 6:
                 company = "Discover";
 
-            // 5 for Mastercard
+                // 5 for Mastercard
             case 5:
                 company = "MasterCard";
 
-            // 4 for Visa
+                // 4 for Visa
             case 4:
                 company = "Visa";
 
