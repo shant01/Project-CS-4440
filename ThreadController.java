@@ -4,8 +4,7 @@ public class ThreadController {
         // Start Timer
         long start = System.currentTimeMillis();
         for (int i = 0; i < args.length; i++) {
-            System.out.println(String.format("Command Line Argument %d is %s", i, args[i]));
-
+            
             String cardNum = (args[i]);
             // Create Threads
             // Thread 1
